@@ -1,0 +1,68 @@
+/* 헤더 inner */
+.site-header-inner {
+  position: fixed;
+  margin-top: -2.5%;
+}
+#site-header {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  top: 2.4rem;
+  position: fixed;
+  height: 110px;
+  display: flex;
+  align-content: center;
+  z-index: 99;
+}
+#site-header-inner-icon {
+  width: 8%;
+  float: left;
+  margin-top: 1.7%;
+  padding-bottom: 1%;
+  margin-left: 10%;
+}
+#site-header-inner-icon img {
+  height: 100%;
+  width: 100%;
+}
+
+#site-header-inner-menu {
+  display: none;
+}
+#site-header-inner-nav {
+  margin-top: 2%;
+  float: right;
+  height: 100%;
+  margin-right: 10%;
+}
+.nav-up {
+  top: -60px;
+  animation: fade-out 3s ease-out both;
+}
+.nav-down {
+  width: 100%;
+  background-color: rgba(61, 28, 5, 0.281);
+  animation: fade-in 3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+#site-header-inner-nav ul li {
+  list-style: none;
+  color: #fafbff;
+  float: left;
+  line-height: 30px;
+  vertical-align: middle;
+  text-align: center;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+#site-header-inner-nav a {
+  text-decoration: none;
+  color: #fafbff;
+  display: block;
+  width: 200px;
+  font-size: 20px;
+  font-weight: bold;
+}
+/* 헤더 inner 끝 */

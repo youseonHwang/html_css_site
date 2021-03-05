@@ -1,0 +1,19 @@
+{
+  "folders": [
+	{
+		"name": "html-css",
+		"path": "."
+	},
+	{
+		"name": "slick-1.8.1",
+		"path": "..\\..\\..\\Downloads\\slick-1.8.1\\slick-1.8.1"
+	},
+	{
+		"name": "flip",
+		"path": "..\\..\\..\\Downloads\\flip-master\\flip-master\\flip"
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "html-css"
+  }
+}

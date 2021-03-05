@@ -1,0 +1,433 @@
+/* Font */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
+/* Header , Footer */
+@import url("header.css");
+@import url("footer.css");
+/* Animation 효과 */
+@import url("keyframes.css");
+
+* {
+  margin: 0px;
+}
+body,
+html {
+  width: 100%;
+  height: 100%;
+  font-family: "Roboto Slab", serif;
+  background-color: #f1f2f2;
+  letter-spacing: 0.9px;
+  word-spacing: 1.1px;
+}
+#panel {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ccc;
+  height: 200px;
+}
+.box {
+  width: 100%;
+  float: left;
+}
+/*------------- Box 1-------------- */
+.box1 {
+  background-image: url("https://images.unsplash.com/photo-1490781744427-4ed7163d1eaf?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80");
+  background-size: cover;
+  height: 1000px;
+  position: relative;
+  z-index: 1;
+}
+.box1::after {
+  content: "";
+  background-color: darkgray;
+  height: 1000px;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  opacity: 0.28;
+}
+/*------------- Slide -------------- */
+.site-main-content1-banner {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 95%;
+  width: 58%;
+  height: 20%;
+  position: absolute;
+  top: 45%;
+  margin-left: 20%;
+  margin-top: -6%;
+}
+.slide-image {
+  margin-left: 5%;
+  position: relative;
+  width: 40%;
+  z-index: 1;
+}
+.slide-text {
+  width: 55%;
+  color: #fafbff;
+  text-align: left;
+  z-index: 2;
+  position: relative;
+  float: left;
+  box-sizing: inherit;
+  margin-left: 45%;
+  margin-top: -32%;
+}
+.slide-text h2 {
+  text-shadow: 2px 2px #8b8484;
+  font-size: 70px;
+  font-weight: bold;
+}
+.slide-text p {
+  margin-top: 2%;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: "Roboto", sans-serif;
+}
+
+/*------------- 올라오는 이미지 -------------- */
+#image-capsule-box {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1600px;
+  max-width: 95%;
+  position: relative;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  margin-left: -650px;
+  margin-top: -150px;
+}
+.image-capsule {
+  height: 600px;
+  width: 400px;
+  float: left;
+  padding: 1%;
+  position: relative;
+  margin-bottom: 80px;
+}
+.image-capsule img {
+  border-radius: 1em;
+}
+.capsule1 {
+  animation: slide-top 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+.capsule2 {
+  animation: slide-top 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+.capsule3 {
+  animation: slide-top 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.overlay {
+  border-radius: 1em;
+  cursor: pointer;
+  position: absolute;
+  top: 14px;
+  bottom: 0;
+  left: 16px;
+  right: 0;
+  height: 600px;
+  width: 400px;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: black;
+}
+.overlay-text {
+  width: 80%;
+  color: white;
+  font-size: 17px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+}
+.image-capsule:hover .overlay {
+  opacity: 0.7;
+}
+.image-capsule:hover .btn-down {
+  animation: bounce-top 1.2s both;
+}
+.image-capsule:hover h4 {
+  animation: bounce-top 1.2s both;
+}
+h4 {
+  margin-top: -5%;
+  font-size: 60px;
+  text-align: center;
+  position: relative;
+  text-shadow: 4px 2px #ecc9a0;
+  color: #5c320b;
+  font-weight: 900;
+}
+
+.btn-down {
+  margin-top: 6%;
+  margin-left: 45%;
+  width: 25px;
+  height: 25px;
+}
+.btn-down img {
+  width: 150%;
+  height: 130%;
+}
+/*------------- Box 2-------------- */
+.box2 {
+  background-color: #e7d9c7d7;
+  height: 900px;
+}
+.box2 .box-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.box2 .content-image {
+  margin-top: 5%;
+  margin-bottom: 10%;
+  float: left;
+  width: 50%;
+}
+.box2 .content-image img {
+  box-shadow: 5px 5px 5px rgb(66, 61, 57);
+  margin-left: 30%;
+  width: 70%;
+  height: 600px;
+  z-index: 1;
+}
+
+.box2 .flip-front-content-message {
+  animation: slide-in-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  text-shadow: 4px 3px 3px #e7d9c7d7;
+  font-size: 60px;
+  margin-left: -20%;
+  margin-top: 12%;
+  text-align: right;
+  line-height: 1.5;
+  position: relative;
+  float: left;
+  width: 50%;
+  z-index: 2;
+  font-weight: 900;
+}
+
+.flip-back-content-message {
+  animation: slide-in-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  font-size: medium;
+  margin-top: 12%;
+  text-align: center;
+  line-height: 1.5;
+  position: relative;
+  float: left;
+  z-index: 2;
+  width: 60%;
+  margin-left: 20%;
+  font-weight: 900;
+}
+/*------------- Box 3-------------- */
+.box3 {
+  background-color: #41414181;
+  height: 900px;
+}
+
+.box3 .box-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.box3 .content-image {
+  margin-top: 15%;
+  margin-bottom: 10%;
+  float: left;
+  width: 80%;
+  height: 450px;
+}
+.box3 .content-image img {
+  box-shadow: 5px 5px 5px rgb(173, 157, 146);
+  margin-left: 40%;
+  width: 55%;
+  height: 100%;
+  z-index: 1;
+}
+
+.box3 .flip-front-content-message {
+  color: #f1e4d7;
+  animation: slide-in-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  text-shadow: 4px 3px 3px #0a0a0a;
+  font-size: 60px;
+  margin-left: 18%;
+  margin-top: -43%;
+  text-align: left;
+  line-height: 1.5;
+  position: relative;
+  float: left;
+  width: 50%;
+  z-index: 2;
+  font-weight: 900;
+}
+/*------------- Box 4-------------- */
+.box4 {
+  background-color: #f29f324f;
+  height: 900px;
+}
+.box4 .box-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.box4 .content-image {
+  margin-top: 7%;
+  margin-bottom: 10%;
+  float: left;
+  width: 80%;
+}
+.box4 .content-image img {
+  box-shadow: 5px 5px 5px rgb(66, 61, 57);
+  margin-left: 5%;
+  width: 60%;
+  height: 450px;
+  z-index: 1;
+}
+.box4 .flip-front-content-message {
+  color: #381b05;
+  animation: slide-in-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  text-shadow: 4px 3px 3px #0e0d0d62;
+  font-size: 60px;
+  margin-left: 23%;
+  margin-top: -14%;
+  text-align: right;
+  line-height: 1.2;
+  position: relative;
+  float: left;
+  width: 55%;
+  z-index: 2;
+  font-weight: 900;
+}
+/*------------- Box 5-------------- */
+.box5 {
+  height: 700px;
+}
+.box-content-content5 {
+  background-color: #fafbff;
+  width: 60%;
+  height: 70%;
+  margin-top: 6.5%;
+  margin-left: 20%;
+  text-align: center;
+}
+.box-content-content5-text {
+  padding-top: 12%;
+}
+.box-content-content5-text h3 {
+  font-size: 100px;
+}
+.box-content-content5-text p {
+  font-weight: 200;
+  font-size: 16px;
+}
+.box5-contetnt-more a {
+  color: black;
+  text-decoration: wavy underline rgb(253, 185, 13);
+}
+.box5-contetnt-more:hover {
+  animation: shake-top 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+}
+/*------------- Card-------------- */
+.container {
+  font-family: "Roboto", sans-serif;
+  height: 600px;
+  display: flex;
+  margin-top: -10%;
+}
+.card {
+  color: #000;
+  display: flex;
+  height: 90%;
+  width: 60%;
+  background-color: rgba(255, 234, 210, 0.965);
+  border-radius: 8px;
+  box-shadow: -0.5rem 0 1rem rgba(117, 86, 58, 0.616);
+  transition: 0.4s ease-out;
+  position: relative;
+  left: 0px;
+}
+.card:not(:first-child) {
+  margin-left: -50px;
+}
+.card:hover {
+  transform: translateY(-20px);
+  transition: 0.4s ease-out;
+}
+.card:hover ~ .card {
+  position: relative;
+  left: 50px;
+  transition: 0.4s ease-out;
+}
+.card-title {
+  margin-left: 5%;
+  text-align: center;
+  font-size: 20px;
+  margin-top: 1%;
+  width: 90%;
+  position: absolute;
+}
+.title {
+  font-weight: 300;
+}
+.card-image {
+  top: 15%;
+  position: absolute;
+}
+.card-image img {
+  width: 60%;
+  height: 25%;
+}
+.card-text {
+  position: absolute;
+  top: 58%;
+  padding: 5%;
+  font-size: 16x;
+}
+
+/* ------------- Box-Buttons ------------- */
+.btn-more,
+.btn-back {
+  cursor: pointer;
+  width: 30%;
+  background-color: #503830;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+.btn-more:hover {
+  opacity: 1;
+  animation: heartbeat 1.5s ease-in-out infinite both;
+}
+.btn-back:hover {
+  opacity: 1;
+  animation: heartbeat 1.5s ease-in-out infinite both;
+}

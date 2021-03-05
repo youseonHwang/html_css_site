@@ -1,0 +1,249 @@
+/* tablet (아이패드 기준) */
+@media screen and (min-width: 0px) and (max-width: 1024px) {
+  /* 슬라이드 */
+  .box1 {
+    height: 700px;
+  }
+  .box1::after {
+    height: 700px;
+  }
+  .slide-image {
+    margin-left: 5%;
+    position: relative;
+    width: 30%;
+    z-index: 1;
+    padding-top: 12%;
+  }
+  .slide-text h2 {
+    padding-top: 5%;
+    text-shadow: 2px 2px #8b8484;
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .slide-text p {
+    margin-top: 2%;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: "Roboto", sans-serif;
+  }
+
+  /* 헤더 */
+  #site-header-inner-nav {
+    display: none;
+  }
+  #site-header-inner-menu {
+    width: 5%;
+    display: flex;
+    float: right;
+    margin-right: 5%;
+    margin-top: 1.5%;
+  }
+  #site-header-inner-menu img {
+    cursor: pointer;
+    width: 20px;
+  }
+  .nav-down {
+    margin-top: -5%;
+    width: 100%;
+    background-color: rgba(61, 28, 5, 0.281);
+    animation: fade-in 3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  }
+
+  /* 겹친 이미지 */
+  #image-capsule-box {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 95%;
+    position: relative;
+    z-index: 2;
+    left: 50%;
+    top: 50%;
+    margin-left: -42%;
+    margin-top: -150px;
+  }
+  .image-capsule {
+    height: 300px;
+    width: 200px;
+    float: left;
+    padding: 1%;
+    position: relative;
+    top: -10%;
+    margin-bottom: 100px;
+  }
+  h4 {
+    font-size: 30px;
+  }
+  .overlay {
+    top: 7px;
+    left: 6px;
+    height: 300px;
+    width: 200px;
+  }
+  .overlay-text {
+    font-size: 10px;
+  }
+
+  /* Box */
+  .box2 {
+    height: 500px;
+  }
+  .box2 .flip-front-content-message {
+    margin-top: 20%;
+    font-size: 30px;
+  }
+  .box2 .content-image img {
+    margin-top: 15%;
+    height: 300px;
+  }
+  .box3 {
+    height: 500px;
+  }
+  .box3 .content-image img {
+    margin-left: 45%;
+    margin-top: 10%;
+    height: 230px;
+  }
+  .box3 .flip-front-content-message {
+    font-size: 30px;
+    margin-top: -70%;
+  }
+  .box4 {
+    height: 500px;
+  }
+  .box4 .content-image img {
+    margin-top: 5%;
+    height: 200px;
+  }
+  .box4 .flip-front-content-message {
+    font-size: 30px;
+    margin-top: -15%;
+  }
+  .box5 {
+    height: 400px;
+  }
+  .box-content-content5-text h3 {
+    font-size: 60px;
+  }
+  .box5-contetnt-more a {
+    text-decoration: wavy underline rgb(253, 185, 13);
+  }
+
+  /* Box-Buttons */
+  .btn-more,
+  .btn-back {
+    font-size: 11px;
+    padding: 5px 15px;
+  }
+
+  /* Card */
+  .container {
+    height: 400px;
+  }
+  .card-image img {
+    margin-top: 20%;
+    width: 40%;
+  }
+  .card-title {
+    top: 5%;
+    font-size: 12px;
+  }
+  .card-text {
+    top: 45%;
+    font-size: 10px;
+  }
+}
+
+/* mobile (Iphone 11 기준) */
+@media screen and (min-width: 0px) and (max-width: 414px) {
+  /* 헤더 */
+  #site-header-inner-menu img {
+    width: 15px;
+  }
+  #site-header-inner-icon {
+    width: 15%;
+  }
+  .box1 {
+    height: 500px;
+  }
+  .box1::after {
+    height: 500px;
+  }
+  /* 슬라이드 */
+  .site-main-content1-banner {
+    top: 55%;
+    width: 65%;
+  }
+  .slide-image {
+    width: "";
+  }
+  .slide-text {
+    margin-top: -45%;
+  }
+  .slide-text h2 {
+    font-size: 20px;
+  }
+  /* 겹친 이미지 */
+  .image-capsule {
+    height: 170px;
+    width: 300px;
+    float: left;
+    padding: 1%;
+    position: relative;
+    margin-bottom: 100px;
+    margin-left: 7%;
+  }
+  h4 {
+    font-size: 30px;
+  }
+  .overlay {
+    top: 6px;
+    left: 6px;
+    height: 170px;
+    width: 300px;
+  }
+  .overlay-text {
+    font-size: 12px;
+  }
+  /* Box */
+
+  .box2 .flip-front-content-message {
+    margin-top: 20%;
+    font-size: 30px;
+  }
+  .box2 .content-image img {
+    margin-top: 15%;
+    height: 300px;
+  }
+  .box3 .content-image img {
+    margin-left: 45%;
+    margin-top: 10%;
+    height: 230px;
+  }
+  .box3 .flip-front-content-message {
+    font-size: 30px;
+    margin-top: -70%;
+  }
+  .box4 .content-image img {
+    margin-top: 5%;
+    height: 200px;
+  }
+  .box4 .flip-front-content-message {
+    font-size: 30px;
+    margin-top: -15%;
+  }
+  .box-content-content5-text h3 {
+    font-size: 60px;
+  }
+  .box5-contetnt-more a {
+    text-decoration: wavy underline rgb(253, 185, 13);
+  }
+
+  /* footer */
+  .footer-content p {
+    font-size: 9px;
+  }
+  .footer-content a {
+    font-size: 9px;
+  }
+}

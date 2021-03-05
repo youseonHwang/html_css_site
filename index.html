@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" conetent="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+<title>YESCNC</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" type="text/css" href="slick/slick.css">
+<link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="slick/slick.min.js"></script>
+  
+<script>
+$(function () {
+
+  // 헤더 슬라이드 배너 부분
+  $('#slider-div').slick({
+    slide: 'div',		
+    infinite: true, 	 
+    slidesToShow: 1,		
+    slidesToScroll: 1,	
+    speed: 1000,	 
+    arrows: true, 	
+    dots: true, 	
+    pauseOnHover: true,		
+    vertical: false,	
+    prevArrow: "<button type='button' class='slick-prev'>Previous</button>",	
+    nextArrow: "<button type='button' class='slick-next'>Next</button>",	
+    dotsClass: "slick-dots", 
+    draggable: true,
+  });
+
+  // 헤더 스크롤 애니메이션
+  var didScroll;
+  var lastScrollTop = 0; 
+  var delta = 5;
+  var navbarHeight = $('#site-header-inner').outerHeight(); 
+  $(window).scroll(function (event) {
+      didScroll = true; 
+  }); 
+  setInterval(function () {
+      if (didScroll) { hasScrolled(); didScroll = false; } 
+  }, 250); 
+
+  function hasScrolled() {
+    var st = $(this).scrollTop();
+    if(Math.abs(lastScrollTop - st) <= delta) return;
+    if (st > lastScrollTop && st > navbarHeight){
+        $('.site-header-inner').removeClass('nav-down').addClass('nav-up'); 
+    } else {
+      if(st + $(window).height() < $(document).height()) {
+          $('.site-header-inner').removeClass('nav-up').addClass('nav-down'); 
+        } 
+      }
+      if ( $("#slider-div").height()>= st) {
+        $('.site-header-inner').removeClass('nav-down');
+      }
+    lastScrollTop = st; 
+  }
+
+  // 오버레이 클릭시 해당 위치로 스크롤 이동
+  $('.overlay-sdn').click(function () {
+    var offset = $('.box2').offset();
+    $('html').animate({ scrollTop: offset.top }, 900);
+  });
+  $('.overlay-it').click(function () {
+    var offset = $('.box3').offset();
+    $('html').animate({ scrollTop: offset.top }, 900);
+  });
+  $('.overlay-sqa').click(function () {
+    var offset = $('.box4').offset();
+    $('html').animate({ scrollTop: offset.top }, 900);
+  });
+  
+  // 스크롤시 객체 나타내기 (애니메이션)
+  var navHeight = $("#site-header-inner-nav").height();
+  $(".image-capsule").hide(); // 일단 숨기기
+
+  $(window).scroll(function () {  // 윈도우 스크롤 기능 작동
+    if ($(this).scrollTop() >= navHeight) {
+      $(".image-capsule").show();
+    }
+  });
+
+  $('.box-content-content2').load("back.html #content2-front");
+  $('.box-content-content3').load("back.html #content3-front");
+  $('.box-content-content4').load("back.html #content4-front");
+
+  // content2의 button 클릭시
+  $(document).on('click', '.content2-btn-more', function () {
+    $('.content2-flip-card-front').hide();
+    $('.box-content-content2').load("back.html #content2-back");
+
+  });
+  $(document).on('click', '.content2-btn-back', function () {
+    console.log('ddd');
+    $('.content2-flip-card-back').hide();
+      $('.box-content-content2').load("back.html #content2-front");
+  });
+
+  // content3의 button 클릭시
+  $(document).on('click', '.content3-btn-more', function () {
+    $('.content3-flip-card-front').hide();
+    $('.box-content-content3').load("back.html #content3-back");
+  });
+  $(document).on('click', '.content3-btn-back', function () {
+    console.log('ddd');
+    $('.content3-flip-card-back').hide();
+    $('.box-content-content3').load("back.html #content3-front");
+  });
+
+  // content4의 button클릭시
+  $(document).on('click', '.content4-btn-more', function () {
+    $('.content4-flip-card-front').hide();
+    $('.box-content-content4').load("back.html #content4-back");
+  });
+  $(document).on('click', '.content4-btn-back', function () {
+    console.log('ddd');
+    $('.content4-flip-card-back').hide();
+    $('.box-content-content4').load("back.html #content4-front");
+  });
+})
+</script>
+  <style>
+    @import url("media.css");
+  </style>
+  </head>
+  <body>
+    <!-- 전체를 감싸는 panel-->
+    <div id="panel">
+      <!-- 헤더 영역 -->
+      <div id="site-header">
+        <div class="site-header-inner">
+          <!-- 헤더 아이콘 (yescnc 아이콘) -->
+          <div id="site-header-inner-icon">
+            <img src="image\logo_yescnc_01.png" />
+          </div>
+          <!-- nav메뉴 -->
+          <div id="site-header-inner-nav">
+            <nav>
+              <ul>
+                <li><a href="#">SDN</a></li>
+                <li><a href="#">IT INFRA</a></li>
+                <li><a href="#">Platform</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div id="site-header-inner-menu">
+            <img
+              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDM4NCAzODQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTIiIHhtbDpzcGFjZT0icHJlc2VydmUiIGNsYXNzPSIiPjxnPjxwYXRoIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZD0ibTM2OCAxNTQuNjY3OTY5aC0zNTJjLTguODMyMDMxIDAtMTYtNy4xNjc5NjktMTYtMTZzNy4xNjc5NjktMTYgMTYtMTZoMzUyYzguODMyMDMxIDAgMTYgNy4xNjc5NjkgMTYgMTZzLTcuMTY3OTY5IDE2LTE2IDE2em0wIDAiIGZpbGw9IiNmZmZmZmYiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIHN0eWxlPSIiPjwvcGF0aD48cGF0aCB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGQ9Im0zNjggMzJoLTM1MmMtOC44MzIwMzEgMC0xNi03LjE2Nzk2OS0xNi0xNnM3LjE2Nzk2OS0xNiAxNi0xNmgzNTJjOC44MzIwMzEgMCAxNiA3LjE2Nzk2OSAxNiAxNnMtNy4xNjc5NjkgMTYtMTYgMTZ6bTAgMCIgZmlsbD0iI2ZmZmZmZiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgc3R5bGU9IiI+PC9wYXRoPjxwYXRoIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZD0ibTM2OCAyNzcuMzMyMDMxaC0zNTJjLTguODMyMDMxIDAtMTYtNy4xNjc5NjktMTYtMTZzNy4xNjc5NjktMTYgMTYtMTZoMzUyYzguODMyMDMxIDAgMTYgNy4xNjc5NjkgMTYgMTZzLTcuMTY3OTY5IDE2LTE2IDE2em0wIDAiIGZpbGw9IiNmZmZmZmYiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIHN0eWxlPSIiPjwvcGF0aD48L2c+PC9zdmc+" />
+          </div>
+        </div>
+      </div>
+
+      <!-- 메인 영역 -->
+      <div id="site-main">
+        <!------------------------------------------>
+        <div id="site-main-content1" class="box box1">
+          <div class="site-main-content1-banner animate__animated animate__fadeIn">
+            <!-- stlye 은 slick 영역 확인용 -->
+            <div id="slider-div">
+              <div class="slide">
+                <div class="slide-image">
+                  <img src="image\img_platform.png" width="100%">
+                </div>
+                <div class="slide-text">
+                  <h2>NMS Platform</h2>
+                  <p>데이터 수집, 분석하여 시각화하는</p>
+                  <p>전문 플랫폼</p>
+                </div>
+              </div>
+              <div class="slide">
+                <div class="slide-image">
+                  <img src="image\software_defined_network.png" width="100%">
+                </div>
+                <div class="slide-text">
+                  <h2>Software Defined Network</h2>
+                  <p>SDN Switch</p>
+                  <p>White Box Server</p>
+                  <p>SD WAN</p>
+                </div>
+              </div>
+              <div class="slide">
+                <div class="slide-image">
+                  <img src="image\IT_infrastructure_Service.png" width="100%">
+                </div>
+                <div class="slide-text">
+                  <h2>IT Infrastructure Service</h2>
+                  <p>Data Analysis</p>
+                  <p>Visualization Solution</p>
+                </div>
+              </div>
+              <div class="slide">
+                <div class="slide-image">
+                  <img src="image\Software_Quality_Assurance.png" width="100%">
+                </div>
+                <div class="slide-text">
+                  <h2>Software Quality Assurance</h2>
+                  <p>전문가들로 구성된 테스트 아웃소싱 서비스</p>
+                  <p>테스트 자동화 및 컨설팅 등 토탈 검증 솔루션 제공</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!---------------------------------------------------------------------------------------------->
+        <div id="image-capsule-box">
+          <div class="image-capsule capsule1">
+            <img src="image\kewal-Rs9ypWXB1vE-unsplash.jpg" width=100% height="100%"/>
+            <h4> SDN </h4>
+            <div class="overlay overlay-sdn">
+              <div class="overlay-text">
+                <span>SDN(Software Defined Network)</span><br />
+                소프트웨어 프로그램을 통해 네트워크 경로설정
+                제어 및 복잡한 운용관리를 편리하게 처리 가능한 차세대 네트워크 기술
+                네트워크 구성에 필요한 서버 및 스위치 장비들에 대한 신속한 지원 및 제공 가능
+              </div>
+            </div>
+            <div class="btn-down">
+              <img src="image\down-arrow.png"/>
+            </div>
+          </div>
+          
+          <div class="image-capsule capsule2">
+            <img src="image\krzysztof-kowalik-KiH2-tdGQRY-unsplash.jpg" width="100%" height="100%"/>
+            <h4> IT Infra </h4>
+            <div class="overlay overlay-it">
+              <div class="overlay-text">
+                <span>IT Infra (IT Infrastructure)</span><br/>
+                네트워크, 서버, 데이터베이스, 정보보안, 시스템 소프트웨어 및 기반시설 등 IT서비스의 기반이 되는 시스템 및 구조
+                통합관제, ITAM/ITSM, NMS, TPMS 서비스를 통해 사용자들에게 수준 높은 서비스 제공 가능
+              </div>
+            </div>
+            <div class="btn-down">
+              <img src="image\down-arrow.png" />
+            </div>
+          </div>
+          <div class="image-capsule capsule3">
+            <img src="image\alina-grubnyak-ZiQkhI7417A-unsplash.jpg" width="100%" height="100%" />
+            <h4> SQA </h4>
+            <div class="overlay overlay-sqa">
+              <div class="overlay-text">
+                <span>SQA (Software Quality Assurance)</span><br />
+                각종 제품의 기획에서부터 릴리즈(배포)까지 전 과정별로의 업무 효율화와 제품에 대한 품질 보증 및 관리
+                제품 품질수준 확보를 위한 단계별 프로세스 정립 및 절차를 통한 품질향상에 기여 가능
+              </div>
+            </div>
+            <div class="btn-down">
+              <img src="image\down-arrow.png" />
+            </div>
+          </div>
+        </div>
+        <!---------------------------------------------------------------------------------------------->
+        <div id="site-main-content2" class="box box2">
+          <div class="box-content box-content-content2"> 
+          </div>
+        </div>
+        <!---------------------------------------------------------------------------------------------->
+        <div id="site-main-content3" class="box box3">
+          <div class="box-content box-content-content3">
+          </div>
+        </div>
+        <!---------------------------------------------------------------------------------------------->
+        <div id="site-main-content4" class="box box4">
+          <div class="box-content box-content-content4">
+          </div>
+        </div>
+      </div>
+      <!---------------------------------------------------------------------------------------------->
+        <div id="site-main-content5" class="box box5">
+          <div class="box-content-content5">
+            <div class="box-content-content5-text">
+              <p style="line-height: 2; color: rgb(253, 185, 13);">New Networks Solution</p>
+              <h3>YESCNC</h3>
+              <p class="box5-contetnt-more"><a href="#"> More About Us </a></p>
+            </div>
+          </div>
+        </div>
+      <!---------------------------------------------------------------------------------------------->
+      <!-- 푸터 영역 -->
+      <div id="site-footer">
+        <div class="box box6">
+          <div class="footer-content">
+            <div class="footer-content-left">
+              <img src="image\logo_yescnc_01.png" width="50%">
+            </div>
+            <div class="footer-content-center">
+              <p>
+                Copyrights © YESCNC.Inc. All Right Reserved. <br/>
+                서울시 성수일로 77(성수동1가 13-164) 서울숲IT밸리 1005~1008호<br />
+                [CALL]02. 3471. 1475<br />
+                [FAX]02. 3471. 1478<br />
+              </p>
+            </div>
+            <div class="footer-content-right">
+              <div class="footer-intranet">
+                <p>Intranet</p>
+                <a href="#">News</a>
+                <a href="#">Mail</a>
+                <a href="#">ERP</a>
+                <a href="#">근태관리</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
